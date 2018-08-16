@@ -1,0 +1,16 @@
+{% extends 'basetests.html.twig' %}
+{% block title %}Détails d'un membre{% endblock %}
+{% block body %}
+    <p>Pseudo :
+        {{membre.pseudo}}</p>
+    <p>email :
+        {{membre.email}}</p>
+    <p>MdP :
+        {{membre.password}}</p>
+    <p>
+        <a href="{{ path('test_edit', {'id': membre.id}) }}">Editer</a>
+    </p>
+    <p>
+        <a href="{{ path('test_del', {'id': membre.id}) }}">Supprimer</a>
+    </p>
+{% endblock %}

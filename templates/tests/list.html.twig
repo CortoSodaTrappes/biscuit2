@@ -1,0 +1,17 @@
+{% extends 'basetests.html.twig' %}
+{% block title %}Liste de membres{% endblock %}
+{% block body %}
+    <table>
+        {% for membre in membres %}
+            <tr>
+                <td>
+                    {{membre.id}}
+                </td>
+                <td>
+                    <a href="{{ path('test_show', {'id': membre.id}) }}">{{membre.pseudo}}</a>
+                </td>
+                <td>{{membre.email}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
