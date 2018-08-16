@@ -26,6 +26,18 @@ class Messages
      */
     private $message;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Membres", inversedBy="messages")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $expediteur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Membres", inversedBy="messages")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $destinataire;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +63,30 @@ class Messages
     public function setMessage(string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getExpediteur(): ?Membres
+    {
+        return $this->expediteur;
+    }
+
+    public function setExpediteur(?Membres $expediteur): self
+    {
+        $this->expediteur = $expediteur;
+
+        return $this;
+    }
+
+    public function getDestinataire(): ?Membres
+    {
+        return $this->destinataire;
+    }
+
+    public function setDestinataire(?Membres $destinataire): self
+    {
+        $this->destinataire = $destinataire;
 
         return $this;
     }
