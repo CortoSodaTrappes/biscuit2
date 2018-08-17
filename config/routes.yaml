@@ -35,4 +35,4 @@ test_del:
 
 test_messagerie:
     path: /test/messagerie
-    controller: App\Controller\MessagesController::testMessagerie  
+    controller: App\Controller\MessagesController::tesAllMessages  
